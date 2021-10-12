@@ -131,15 +131,13 @@ if __name__ == '__main__':
     env.create_satellite(500)
     env.telescope_factory(5,['42.37', '-71.03'])
     for tele in env.all_telescope:
-        # tele.sita = env.all_telescope[2].sita
-        # tele.fai = env.all_telescope[2].fai
         print(degrees(tele.sita),degrees(tele.fai))
     start_time = time.time()
     while True:
-        env.time += minutes * 60
-        # env.upgrade()
-        # env.observation_state()
-        env.test_single(348)
+        env.time += minutes * 5
+        env.upgrade()
+        env.observation_state()
+        # env.test_single(348)
 
         if env.time > env.end_time :
             break
